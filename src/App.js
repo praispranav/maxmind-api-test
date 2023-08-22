@@ -11,7 +11,7 @@ function App() {
       const { data:response } = await axios.get(`https://ifconfig.me`);
       console.log(response2);
 
-      const maxMindApi = `https://geoip.maxmind.com/geoip/v2.1/insights/${response2}`;
+      const maxMindApi = `https://geoip.maxmind.com/geoip/v2.1/insights/me`;
       const headers = {
         'Authorization': 'Basic ' + btoa(`${username}:${password}`).toString('base64'),
         'Content-Type': 'application/vnd.maxmind.com-country+json; charset=UTF-8; version=2.1',
