@@ -19,6 +19,7 @@ function App() {
       console.log("headers", headers);
       const { data:response2 } = await axios.get(maxMindApi, {
         headers,
+        responseType: 'text', 
       });
 
       console.log('Final Data', response2);
