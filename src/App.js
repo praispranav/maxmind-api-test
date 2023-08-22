@@ -4,12 +4,10 @@ import { useEffect } from 'react';
 import axios from 'axios';
 
 function App() {
-  const username = '';
-  const password = '';
+  const username = '144806';
+  const password = 'EqjHL16m2OcBi6Dp';
   const getIpAddress = async () =>{
     try{
-      const { data:response } = await axios.get(`https://ifconfig.me`);
-      console.log(response2);
 
       const maxMindApi = `https://geoip.maxmind.com/geoip/v2.1/insights/me`;
       const headers = {
@@ -18,14 +16,13 @@ function App() {
         'Accept-Encoding': 'gzip, deflate'
       };
 
+      console.log("headers", headers);
       const { data:response2 } = await axios.get(maxMindApi, {
         headers,
-        responseType: 'json', 
       });
 
       console.log('Final Data', response2);
 
-      console.log("Response", response);
 
     } catch(error){
       console.log(error);
